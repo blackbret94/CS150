@@ -1,0 +1,151 @@
+1 0 4 beef 5 bananas 10 vegetables 1 soda 9 towels 2 
+1 1 5 beef 1 bananas 6 vegetables 4 soda 7 towels 4 
+1 2 6 beef 8 bananas 7 vegetables 8 soda 8 towels 6 
+29 3 7 beef 9 bananas 3 vegetables 6 soda 9 towels 7 
+29 4 12 beef 10 bananas 3 vegetables 10 soda 6 towels 3 
+29 5 13 beef 6 bananas 2 vegetables 6 soda 5 towels 6 
+28 6 19 beef 6 bananas 8 vegetables 2 soda 7 towels 8 
+28 7 21 beef 5 bananas 6 vegetables 2 soda 5 towels 5 
+28 8 20 beef 7 bananas 6 vegetables 3 soda 2 towels 5 
+36 9 43 beef 6 bananas 4 vegetables 4 soda 8 towels 2 
+36 10 51 beef 10 bananas 8 vegetables 1 soda 7 towels 6 
+36 11 54 beef 8 bananas 5 vegetables 4 soda 10 towels 1 
+41 12 53 beef 9 bananas 4 vegetables 7 soda 2 towels 7 
+41 13 56 beef 1 bananas 8 vegetables 5 soda 5 towels 4 
+41 14 64 beef 9 bananas 5 vegetables 8 soda 4 towels 3 
+58 15 67 beef 2 bananas 2 vegetables 6 soda 3 towels 9 
+58 16 85 beef 9 bananas 9 vegetables 2 soda 4 towels 9 
+58 17 80 beef 10 bananas 6 vegetables 3 soda 10 towels 8 
+87 18 93 beef 6 bananas 2 vegetables 4 soda 6 towels 9 
+87 19 92 beef 10 bananas 6 vegetables 7 soda 5 towels 2 
+87 20 100 beef 6 bananas 5 vegetables 6 soda 8 towels 5 
+94 21 119 beef 8 bananas 8 vegetables 1 soda 1 towels 2 
+94 22 127 beef 5 bananas 6 vegetables 4 soda 4 towels 6 
+94 23 122 beef 6 bananas 9 vegetables 6 soda 1 towels 8 
+109 24 139 beef 4 bananas 7 vegetables 5 soda 4 towels 3 
+109 25 141 beef 3 bananas 1 vegetables 1 soda 6 towels 4 
+109 26 131 beef 6 bananas 6 vegetables 5 soda 2 towels 4 
+106 27 130 beef 2 bananas 2 vegetables 9 soda 7 towels 8 
+106 28 157 beef 1 bananas 7 vegetables 8 soda 10 towels 1 
+106 29 159 beef 10 bananas 3 vegetables 5 soda 1 towels 6 
+112 30 148 beef 2 bananas 2 vegetables 8 soda 9 towels 9 
+112 31 186 beef 3 bananas 5 vegetables 3 soda 4 towels 10 
+112 32 177 beef 7 bananas 10 vegetables 9 soda 8 towels 6 
+125 33 204 beef 2 bananas 8 vegetables 10 soda 8 towels 6 
+125 34 222 beef 1 bananas 7 vegetables 10 soda 1 towels 3 
+125 35 212 beef 1 bananas 1 vegetables 3 soda 10 towels 6 
+123 36 210 beef 6 bananas 4 vegetables 3 soda 6 towels 8 
+123 37 211 beef 2 bananas 5 vegetables 10 soda 9 towels 3 
+123 38 239 beef 4 bananas 8 vegetables 1 soda 6 towels 6 
+129 39 238 beef 10 bananas 7 vegetables 3 soda 10 towels 4 
+129 40 232 beef 3 bananas 4 vegetables 10 soda 3 towels 10 
+129 41 229 beef 9 bananas 4 vegetables 6 soda 5 towels 10 
+144 42 228 beef 6 bananas 6 vegetables 7 soda 10 towels 9 
+144 43 227 beef 3 bananas 8 vegetables 9 soda 7 towels 10 
+144 44 252 beef 3 bananas 7 vegetables 6 soda 2 towels 3 
+145 45 281 beef 5 bananas 3 vegetables 1 soda 4 towels 4 
+145 46 280 beef 6 bananas 4 vegetables 10 soda 8 towels 9 
+145 47 285 beef 2 bananas 1 vegetables 1 soda 2 towels 4 
+169 48 284 beef 10 bananas 2 vegetables 2 soda 10 towels 8 
+169 49 263 beef 10 bananas 10 vegetables 1 soda 6 towels 3 
+169 50 267 beef 6 bananas 8 vegetables 3 soda 1 towels 6 
+161 51 307 beef 6 bananas 8 vegetables 2 soda 2 towels 1 
+161 52 312 beef 5 bananas 6 vegetables 6 soda 7 towels 2 
+161 53 316 beef 6 bananas 1 vegetables 4 soda 7 towels 9 
+165 54 290 beef 5 bananas 4 vegetables 7 soda 9 towels 2 
+165 55 291 beef 2 bananas 7 vegetables 1 soda 5 towels 10 
+165 56 299 beef 9 bananas 9 vegetables 10 soda 5 towels 9 
+187 57 301 beef 1 bananas 1 vegetables 7 soda 1 towels 3 
+187 58 342 beef 7 bananas 6 vegetables 5 soda 9 towels 7 
+187 59 339 beef 7 bananas 7 vegetables 1 soda 10 towels 3 
+184 60 337 beef 6 bananas 10 vegetables 10 soda 5 towels 8 
+184 61 344 beef 7 bananas 6 vegetables 1 soda 7 towels 6 
+184 62 325 beef 10 bananas 3 vegetables 1 soda 6 towels 8 
+183 63 334 beef 1 bananas 6 vegetables 6 soda 5 towels 4 
+183 64 332 beef 3 bananas 6 vegetables 6 soda 9 towels 5 
+183 65 375 beef 8 bananas 5 vegetables 1 soda 2 towels 10 
+181 66 368 beef 8 bananas 9 vegetables 7 soda 7 towels 4 
+181 67 381 beef 10 bananas 10 vegetables 9 soda 10 towels 10 
+181 68 378 beef 1 bananas 7 vegetables 10 soda 6 towels 3 
+205 69 358 beef 7 bananas 5 vegetables 10 soda 2 towels 1 
+205 70 355 beef 4 bananas 5 vegetables 4 soda 5 towels 3 
+205 71 410 beef 6 bananas 5 vegetables 1 soda 10 towels 3 
+200 72 413 beef 2 bananas 3 vegetables 4 soda 10 towels 2 
+200 73 401 beef 5 bananas 3 vegetables 2 soda 7 towels 2 
+200 74 404 beef 10 bananas 8 vegetables 7 soda 8 towels 2 
+197 75 405 beef 1 bananas 8 vegetables 9 soda 8 towels 9 
+197 76 392 beef 9 bananas 1 vegetables 4 soda 10 towels 9 
+197 77 399 beef 4 bananas 2 vegetables 2 soda 7 towels 6 
+198 78 387 beef 6 bananas 8 vegetables 10 soda 8 towels 8 
+198 79 441 beef 5 bananas 6 vegetables 4 soda 10 towels 4 
+198 80 435 beef 8 bananas 5 vegetables 2 soda 1 towels 4 
+231 81 439 beef 9 bananas 2 vegetables 10 soda 5 towels 8 
+231 82 478 beef 3 bananas 2 vegetables 8 soda 6 towels 9 
+231 83 472 beef 6 bananas 2 vegetables 9 soda 4 towels 7 
+273 84 469 beef 2 bananas 10 vegetables 4 soda 9 towels 9 
+273 85 465 beef 3 bananas 9 vegetables 4 soda 7 towels 1 
+273 86 462 beef 6 bananas 1 vegetables 5 soda 1 towels 2 
+272 87 460 beef 3 bananas 8 vegetables 7 soda 6 towels 9 
+272 88 459 beef 6 bananas 5 vegetables 10 soda 7 towels 9 
+272 89 457 beef 2 bananas 1 vegetables 4 soda 7 towels 6 
+257 90 448 beef 8 bananas 1 vegetables 1 soda 10 towels 5 
+257 91 496 beef 8 bananas 4 vegetables 9 soda 8 towels 10 
+257 92 498 beef 3 bananas 4 vegetables 7 soda 3 towels 1 
+309 93 489 beef 9 bananas 6 vegetables 10 soda 2 towels 9 
+309 94 488 beef 1 bananas 4 vegetables 5 soda 1 towels 4 
+309 95 485 beef 2 bananas 4 vegetables 5 soda 6 towels 7 
+310 96 486 beef 9 bananas 4 vegetables 1 soda 6 towels 2 
+310 97 480 beef 6 bananas 2 vegetables 1 soda 6 towels 7 
+310 98 482 beef 7 bananas 7 vegetables 2 soda 9 towels 8 
+317 99 497 beef 7 bananas 2 vegetables 9 soda 1 towels 4 
+317 100 
+317 101 
+338 102 
+338 103 
+338 104 
+349 105 
+349 106 
+349 107 
+348 108 
+348 109 
+348 110 
+320 111 
+320 112 
+320 113 
+329 114 
+329 115 
+329 116 
+352 117 
+352 118 
+352 119 
+361 120 
+361 121 
+361 122 
+412 123 
+412 124 
+412 125 
+394 126 
+394 127 
+394 128 
+443 129 
+443 130 
+443 131 
+444 132 
+444 133 
+444 134 
+436 135 
+436 136 
+436 137 
+468 138 
+468 139 
+468 140 
+461 141 
+461 142 
+461 143 
+454 144 
+454 145 
+454 146 
+490 147 
+490 148 
+490 149 
+

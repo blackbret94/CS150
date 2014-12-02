@@ -1,0 +1,15 @@
+name: The Lyre of Orpheus
+city: San Francisco
+category: Greek,Breakfast & Brunch,Seafood,Salad,Soup
+open: Sunday 8:00 16:00,Monday 6:00 20:00,Tuesday 6:00 20:00,Wednesday 6:00 20:00,Thursday 6:00 20:00,Friday 6:00 20:00,Saturday 6:00 01:00
+cost: $$
+rank: 0
+reviewers: 0
+
+name: Renan's Turkish Pizzeria
+city: San Francisco
+category: Turkish,Soup,Salad,Pizza
+open: Sunday 10:00 16:00,Monday 7:00 20:00,Tuesday 7:00 20:00,Wednesday 7:00 20:00,Thursday 7:00 20:00,Friday 7:00 20:00,Saturday 7:00 20:00
+cost: $$$
+rank: 0
+reviewers: 0

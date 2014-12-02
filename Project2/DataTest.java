@@ -1,0 +1,148 @@
+import junit.framework.TestCase;
+import java.io.*;
+import java.util.*;
+
+public class DataTest extends TestCase {
+  // adds a new listing
+  public void testAddListing(){
+    // create data
+    Data data = new Data();
+    
+    // check size
+    assertTrue(data.getDatabase().size() == 0);
+    
+    // add listing
+    data.addListing("Midnight Run","Philadelphia",null,null,"$$");
+    
+    // check size
+    assertTrue(data.getDatabase().size() == 1);
+    
+    // add listing
+    data.addListing("Midnight Log","Philadelphia",null,null,"$$");
+    
+    // check size
+    assertTrue(data.getDatabase().size() == 2);
+    
+    // add listing
+    data.addListing("Midnight Bog","Philadelphia",null,null,"$$");
+    
+    // check size
+    assertTrue(data.getDatabase().size() == 3);
+  }
+  
+  public void testBuildSearchDatabase(){
+    // create file
+    File file = new File("dataTest.txt");
+    try {
+      // instanciate
+      BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+      
+      // add listing 1
+      writer.write("name: The Lyre of Orpheus");
+      writer.newLine();
+      writer.write("city: San Francisco");
+      writer.newLine();
+      writer.write("category: Greek,Breakfast & Brunch,Seafood,Salad,Soup");
+      writer.newLine();
+      writer.write("open: Sunday 8:00 16:00,Monday 6:00 20:00,Tuesday 6:00 20:00,Wednesday 6:00 20:00,Thursday 6:00 20:00,Friday 6:00 20:00,Saturday 6:00 01:00");
+      writer.newLine();
+      writer.write("cost: $$");
+      writer.newLine();
+      writer.write("rank: 0");
+      writer.newLine();
+      writer.write("reviewers: 0");
+      writer.newLine();
+      writer.newLine();
+      
+      // add listing 2
+      writer.write("name: Renan's Turkish Pizzeria");
+      writer.newLine();
+      writer.write("city: San Francisco");
+      writer.newLine();
+      writer.write("category: Turkish,Soup,Salad,Pizza");
+      writer.newLine();
+      writer.write("open: Sunday 10:00 16:00,Monday 7:00 20:00,Tuesday 7:00 20:00,Wednesday 7:00 20:00,Thursday 7:00 20:00,Friday 7:00 20:00,Saturday 7:00 20:00");
+      writer.newLine();
+      writer.write("cost: $$$");
+      writer.newLine();
+      writer.write("rank: 0");
+      writer.newLine();
+      writer.write("reviewers: 0");
+      writer.newLine();
+      writer.newLine();
+      
+      // add listing 3
+      writer.write("name: The Mountain and the Hound");
+      writer.newLine();
+      writer.write("city: New York");
+      writer.newLine();
+      writer.write("category: Fire,Blood,Lions");
+      writer.newLine();
+      writer.write("open: Sunday 10:00 16:00,Monday 7:00 20:00,Tuesday 7:00 20:00,Wednesday 7:00 20:00,Thursday 7:00 20:00,Friday 7:00 20:00,Saturday 7:00 20:00");
+      writer.newLine();
+      writer.write("cost: $$");
+      writer.newLine();
+      writer.write("rank: 0");
+      writer.newLine();
+      writer.write("reviewers: 0");
+      writer.newLine();
+      
+      // close the file
+      writer.close();
+      
+      // create instance of MiniYelp
+      MiniYelp instance = new MiniYelp(false);
+      
+      // import file
+      instance.readFile(file);
+      
+      //TRY DIFFERENT SEARCH CRITERIA
+      // TRY CITY
+      ArrayList<String> catArray = new ArrayList<String>();
+      catArray.add("*");
+      instance.getData().buildSearchDatabase("San Francisco",catArray,"*","*","*");
+      assertTrue("Trying CITY",instance.getData().getCityDatabase().size() == 2);
+      
+      // TRY CATEGORY
+      catArray = new ArrayList<String>();
+      catArray.add("Pizza");
+      instance.getData().buildSearchDatabase("*",catArray,"*","*","*");
+      assertTrue("Trying CATEGORY",instance.getData().getCityDatabase().size() == 1);
+      
+      // TRY MULTIPLE CATEGORIES
+      catArray = new ArrayList<String>();
+      catArray.add("Greek");
+      catArray.add("Salad");
+      instance.getData().buildSearchDatabase("*",catArray,"*","*","*");
+      System.out.println(instance.getData().getCityDatabase().size());
+      assertTrue("Trying MULTIPLE CATEGORIES",instance.getData().getCityDatabase().size() == 1);
+      
+      // TRY COST
+      catArray = new ArrayList<String>();
+      catArray.add("*");
+      instance.getData().buildSearchDatabase("*",catArray,"$$","*","*");
+      assertTrue("Trying COST",instance.getData().getCityDatabase().size() == 2);
+      
+      // TRY TIME
+      catArray = new ArrayList<String>();
+      catArray.add("*");
+      instance.getData().buildSearchDatabase("San Francisco",catArray,"*","Monday","06:30");
+      System.out.println(instance.getData().getCityDatabase().size());
+      assertTrue("Trying TIME",instance.getData().getCityDatabase().size() == 1);
+      
+      // TRY WILDCARD
+      catArray = new ArrayList<String>();
+      catArray.add("*");
+      instance.getData().buildSearchDatabase("*",catArray,"*","*","*");
+      assertTrue("Trying WILDCARD",instance.getData().getCityDatabase().size() == 3);
+      
+    } catch (java.io.IOException e){
+      System.out.println("FILE NOT CREATED");
+      fail();
+    }
+    
+    // search file
+    
+    // compare results
+  }
+}

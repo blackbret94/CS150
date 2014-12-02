@@ -1,0 +1,11 @@
+store 24
+warehouse 6
+store 9
+store 11
+store 10
+store 13
+store 15
+store 14
+warehouse 16
+store 19
+warehouse 18

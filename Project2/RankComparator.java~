@@ -1,0 +1,34 @@
+/**
+ * Compares to the first ordering (Title, year, studio);
+ * @author Bret Black
+ */
+
+import java.util.*;
+
+public class FirstOrderingComp<I> implements Comparator<I> {  
+  // -1 if o1 < o2, 0 if equal, 1 if o1 > o2 
+  public int compare(I o1, I o2){
+    // ensure that the values recieved are movies
+    Movie m1 = (Movie)o1;
+    Movie m2 = (Movie)o2;
+    
+    // check titles
+    if (!m1.getTitle().equals(m2.getTitle())){
+      // if not equal use compareTo()
+      return m1.getTitle().compareToIgnoreCase(m2.getTitle());
+    }
+    
+    // check year
+    if (m1.getYear() != m2.getYear()){
+      return m1.getYear()-m2.getYear();
+    }
+    
+    // check studio
+    return m1.getStudio().compareToIgnoreCase(m2.getStudio());
+  }
+  
+  // true if they are equal
+  public boolean equals(Object obj){
+    return false;
+  }
+}

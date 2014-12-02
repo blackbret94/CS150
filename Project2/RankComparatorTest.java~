@@ -1,0 +1,33 @@
+import junit.framework.TestCase;
+
+public class RankComparatorTest extends TestCase {
+  private Movie m1;
+  private Movie m2;
+  private FirstOrderingComp<Movie> comparator;
+  
+  public void setUp(){
+    comparator = new FirstOrderingComp<Movie>();
+  }
+  
+  public void testCompare() {
+    // compare first movies (check title)
+    m1 = new Movie("Night Shift", "Stephen King", 1976, "Jaunt Productions");
+    m2 = new Movie("Doctor Sleep", "Stephen King", 2013, "Tony Films");
+    
+    assertTrue(comparator.compare(m1,m2) > 0);
+    
+    // compare second movies (check year)
+    m1 = new Movie("Battlestar Galactica", "Cylon Toaster", 1978, "Cheesy Sci-Fi");
+    m2 = new Movie("Battlestar Galactica", "Ronald D. Moore", 2003, "Awesome Sci-Fi");
+    
+    assertTrue(comparator.compare(m1,m2) < 0);
+    
+    // compare third movies (check studio)
+    m2 = new Movie("This Happens", "The Copyman", 2010, "B Quality Films");
+    m1 = new Movie("This Happens", "The Copyman", 2010, "A Quality Films");
+    
+    
+    assertTrue(comparator.compare(m1,m2) < 0);
+  }
+  
+}

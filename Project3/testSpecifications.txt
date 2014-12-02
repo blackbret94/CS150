@@ -1,0 +1,13 @@
+22 vegetables 7
+22 beef 2
+22 bananas 7
+22 towels 5
+1 vegetables 8
+1 beef 3
+1 towels 10
+12 vegetables 5
+12 beef 9
+12 bananas 7
+12 towels 5
+12 soda 10
+

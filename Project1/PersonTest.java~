@@ -1,0 +1,37 @@
+import junit.framework.TestCase;
+
+public class PersonTest extends TestCase {
+  private Person instance;
+  
+  public void setUp(){
+    instance = new Person();
+  }
+  
+  // test the increment function
+  public void testInc(){
+    // make sure the wait time starts at 0
+    assertTrue(instance.getWaitTime() == 0);
+    
+    // make sure the wait time is increasing
+    for (int i = 0; i < 15; i++){
+      instance.incWaitTime();
+      assertTrue(instance.getWaitTime() == i+1);
+    }
+  }
+  
+  // test the reset function
+  public void testReset() {
+    // increment the wait a few times
+    for (int i = 0; i < 15; i++){
+      instance.incWaitTime();
+    }
+    
+    // make sure the wait time is not 0
+    assertTrue(instance.getWaitTime() != 0);
+    
+    // reset the wait time to 0 and check
+    instance.resetWaitTime();
+    assertTrue(instance.getWaitTime() == 0);
+  }
+  
+}

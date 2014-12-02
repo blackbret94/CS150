@@ -1,0 +1,43 @@
+import junit.framework.TestCase;
+import java.io.*;
+import java.util.*;
+
+public class TestController extends TestCase {
+
+  public void testReadResources() {
+    // create file
+    try {
+      // buffered writer
+      BufferedWriter writer = new BufferedWriter(new FileWriter("testResources.txt"));
+      
+      // write to file
+      writer.write("warehouse 3");
+      writer.newLine();
+      writer.write("truck 50 350");
+      writer.newLine();
+      writer.write("bananas 2");
+      writer.newLine();
+      writer.write("beef 1");
+      writer.newLine();
+      writer.write("towels 3");
+      writer.newLine();
+      writer.write("soda 1");
+      writer.newLine();
+      writer.write("vegetables 2");
+      
+      // close
+      writer.newLine();
+      writer.close();
+    } catch (java.io.IOException e){
+      System.out.println("An error occured!  Could not write the test file.");
+      fail();
+    }
+    // read file
+    Controller c = new Controller();
+    ArrayList<Resource> al = c.readResources(new File("testResources.txt"));
+    assertTrue("Failed at getting the warehouse count",c.getWarehouseCount()==3);
+    assertTrue("Failed at getting the truck count",c.getTruckCount()==50);
+    assertTrue("Failed at getting the maximum milage",c.getMaxMilage()==350);
+  }
+  
+}

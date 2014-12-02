@@ -1,0 +1,130 @@
+/**
+ * A floor contains instances of the Person class and passes them to instances
+ * of the Stairs class
+ * 
+ * @author Bret Black 
+ */
+
+import java.util.*;
+
+public class Floor {
+  /** The random generator */
+  private Random random;
+  
+  /** The container for persons who are not in line */
+  private ArrayList<Person> unorderedPersons;
+  
+  /** The queue that holds people waiting to go to the stairs */
+  private LineQueueList<Person> waitingList;
+  
+  /** The ArrayList that contains assosiated stair segments */
+  private ArrayList<Stairs> stairList;
+  
+  /** The default constructor */
+  public Floor(){
+    int tenantsMean = 50;
+    int tenantsVar = 10;
+    
+    // determine number of persons
+    random = new Random();
+    int startingTenants = calculateTenants(tenantsMean,tenantsVar);
+    
+    // create lists
+    unorderedPersons = new ArrayList<Person>(startingTenants);
+    waitingList = new LineQueueList<Person>();
+    stairList = new ArrayList<Stairs>();
+  }
+  
+  /** Constructor with parameters
+    * @param tenantsMean the average number of tenants
+    * @param tenantsVar the variance in tenants 
+    * @param isThird If the floor is a multiple of three there will be less people
+    */
+  public Floor(int tenantsMean, int tenantsVar, boolean isThird){
+    // determine number of persons
+    random = new Random();
+    int startingTenants = calculateTenants(tenantsMean,tenantsVar);
+    
+    // create lists
+    unorderedPersons = new ArrayList<Person>(startingTenants);
+    waitingList = new LineQueueList<Person>();
+    stairList = new ArrayList<Stairs>();
+    
+    // fill floor
+    fillFloor(startingTenants, isThird);
+  }
+  
+  /** Adds occupants to the floor 
+    * @param tenantsStart the starting number of tenants
+    * @param isThird If the floor is a third floor, there should be less people
+    */
+  public void fillFloor(int tenantsStart, boolean isThird){
+    // if isThird, decrease the number of people
+    if (isThird){
+      tenantsStart = tenantsStart/2;
+    }
+    
+    for (int i = 0; i < tenantsStart; i++){
+      // get initial wait time for first person
+      int initWaitTime = (int)(30 + random.nextGaussian()*10);
+      
+      // add person
+      unorderedPersons.add(new Person(initWaitTime));
+    }
+  }
+  
+  /** Runs the queue */
+  public void oneTimeStep(){
+    // run unordered person list
+    for (int i = 0; i < unorderedPersons.size(); i++){
+      Person temp = unorderedPersons.get(i);
+      temp.decWaitTime();
+      
+      // switch queues when the person arrives at the stairs
+      if (temp.getWaitTime() <= 0){
+        waitingList.add(temp);
+        unorderedPersons.remove(i);
+      }
+    }
+    
+    // run waiting person list, adding people to any open staircases
+    for (int i = 0; i < stairList.size(); i++){
+      // check capacity of each stair
+      if (!stairList.get(i).isFull()){
+        stairList.get(i).addPerson(waitingList.poll());
+      }
+    }
+    // FOR DEBUG
+    //System.out.println(unorderedPersons.size());
+  }
+  
+  /** Determines the number of tenants using a gaussian distribution 
+    * @param tenantsMean the avg numbe rof tenants per floor
+    * @param tenantsVar the variance in tenantsMean
+    * @return the number of starting tenants
+    */
+  public int calculateTenants(int tenantsMean, int tenantsVar){
+    int tenantCount = (int)(tenantsMean + random.nextGaussian()*tenantsVar);
+    //System.out.println("Tenants: " + tenantCount);
+    return tenantCount;
+  }
+  
+  // SETTERS AND GETTERS
+  /** Get the unordered person arrayList
+    * @return the unordered list of Persons */
+  public ArrayList<Person> getUnorderedPersons(){
+    return unorderedPersons;
+  }
+  
+  /** Gets the waiting list of persons
+    * @return the waitingList queue */
+  public LineQueueList<Person> getWaitingList(){
+    return waitingList;
+  }
+  
+  /** Gets the list of stairs
+    * @return the stairList */
+  public ArrayList<Stairs> getStairList(){
+    return stairList;
+  }
+}

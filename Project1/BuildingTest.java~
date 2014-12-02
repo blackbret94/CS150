@@ -1,0 +1,29 @@
+import junit.framework.TestCase;
+
+public class BuildingTest extends TestCase {
+  
+  // see if the right number of floors are added
+  public void testAddFloors() {
+    for (int i = 1; i <= 10; i++){
+      // add floors
+      Building instance = new Building(0,0,15,15,15);
+      instance.createFloors(i*10,50,10);
+      
+      // test
+      assertTrue(instance.getFloorList().size()==i*10);
+    }
+  }
+  
+  // see if the right number of staircases are added
+  public void testAddStaircases(){
+    for (int i = 1; i <= 10; i++){
+      // add floors
+      Building instance = new Building(0,0,15,15,15);
+      instance.createStaircases(i*10,10,10);
+      
+      // test
+      assertTrue(instance.getStaircaseList().size()==i*10);
+    }
+  }
+  
+}

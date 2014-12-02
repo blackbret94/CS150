@@ -1,0 +1,160 @@
+/** This class is a restaurant and contains information related to that listing
+  * @author Bret Black */
+import java.util.*;
+
+public class Listing {
+  /** The name of the listing */
+  private String name;
+  /** The city of the listing */
+  private String city;
+  /** The ArrayList that contains categories */
+  private ArrayList<String> categories;
+  /** The container for times */
+  private Schedule schedule;
+  /** Cost */
+  private String cost;
+  /** The raiting based on reviews */
+  private float rank;
+  /** The number of reviews */
+  private int revCount;
+  /** Total score represents the non-averaged score */
+  private int revTotal;
+  
+  /** The default constructor */
+  public Listing(){
+    name = new String("<NAME>");
+    city = new String("<CITY>");
+    schedule = null;
+    categories = null;
+    cost = new String("<COST>");
+    rank = 0;
+    revCount = 0;
+    revTotal = 0;
+  }
+  
+  /** Constructor with params \
+    * @param name the name of the listing
+    * @param city the location of the listing
+    * @param schedule the schedule of the listing
+    * @param categories the categories the listing falls under
+    * @param cost the cost of the listing
+    * @param rank the average raiting of the listing
+    * @param revCount the number of reviews
+    */
+  public Listing(String name, String city, Schedule schedule, ArrayList<String> categories,String cost,
+  float rank, int revCount){
+    this.name = name;
+    this.city = city;
+    this.schedule = schedule;
+    this.categories = categories;
+    this.cost = cost;
+    this.rank = rank;
+    this.revCount = revCount;
+    this.revTotal = (int)(revCount*rank);
+  }
+  
+  /** Adds a review 
+    * @param r The new raiting
+    * @return The new average raiting
+    */
+  public float addReview(int r){
+    // increment number of reviews
+    revCount++;
+    
+    // add to the total score
+    revTotal += r;
+    
+    // calculate new average raiting and return
+    return updateRank();
+  }
+  
+  /** Adds a category
+    * @param cat the new category to add */
+  public void addCategory(String cat){
+    categories.add(cat);
+  }
+  
+  // this method calculates a new average raiting
+  private float updateRank(){
+    return rank = revTotal/revCount;
+  }
+  
+  /** Converts to a String
+    * @return class as a string */
+  public String toString(){
+    return null;
+  }
+  
+  /** Prints the instance out into the console */
+  public void toSystem(){
+    System.out.println("Name: " + name);
+    System.out.println("City: " + city);
+    System.out.println("Category: " + categoriesToString());
+    if (schedule != null){
+      System.out.println("Open Hours: " + schedule.toString());
+    } else System.out.println("Open Hours: ");
+    System.out.println("Cost: " + cost);
+    System.out.println("Rank: " + rank + " average (of " + revCount + " reviews)");
+  }
+  
+  /** Prints the categories as a string
+    * @return Categories as a string */
+  public String categoriesToString(){
+    String catString = new String();
+    
+    // get first
+    if (categories.size() > 0){
+      catString  = new String(categories.get(0));
+    }
+    
+    // add comma and get the rest
+    for (int i = 1;i < categories.size();i++){
+      catString = new String(catString + "," + categories.get(i));
+    }
+    // return
+    return catString;
+  }
+  
+  // SETTERS AND GETTERS
+  /** Gets the name of the listing
+    * @return the name of the listing */
+  public String getName(){
+    return name;
+  }
+  
+  /** Gets the city
+    * @return The city this listing is located */
+  public String getCity(){
+    return city;
+  }
+  
+  /** Gets the cost
+    * @return the cost */
+  public String getCost(){
+    return cost;
+  }
+  
+  /** Gets the schedule
+    * @return the schedule */
+  public Schedule getSchedule(){
+    return schedule;
+  }
+  
+  /** Gets the categories 
+    * @return the list of categories*/
+  public ArrayList<String> getCategories(){
+    return categories;
+  }
+  
+  /** Gets the rank
+    * @return the rank */
+  public float getRank(){
+    return rank;
+  }
+  
+  /** Gets the number of reviews
+    * @return the number of reviews */
+  public int getRevCount(){
+    return revCount;
+  }
+}
